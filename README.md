@@ -1,6 +1,6 @@
 # Parking Lot System
 
-Language used: **C**
+Language used: **C++**
 
 Functions: 
 ```create_parking_lot <rows> <cols> <\newline> <maplines>```
