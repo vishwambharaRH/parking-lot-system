@@ -1,6 +1,6 @@
 # Parking Lot System
 
-Language used: **C++**
+Language used: **C**
 
 Functions: 
 ```create_parking_lot <rows> <cols> <\newline> <maplines>```
@@ -11,9 +11,11 @@ Functions:
 
 ```status```
 
-```regstration_numbers_for_cars_with_colour <colour>``` : return registration numbers of cars with given colour
+```registration_numbers_for_cars_with_colour <colour>``` : return registration numbers of cars with given colour
 
-```slot_numbers_for_cars_with_color <color>``` : return slot numbers for cars with given color
+```slot_numbers_for_cars_with_colour <colour>``` : return slot numbers for cars with given color
 
 ```slot_number_for_registration_number <reg_no>```: return active slot
+
+
 
