@@ -3,3 +3,5 @@
 /parking_lot
 /parking_lot_sanitize
 /tests/data
+build/
+build-sanitize/
