@@ -1,6 +1,11 @@
 # Parking Lot System
 
 Language used: **C**
+I picked C over C++ as I'm very familiar with it. Though C++ has better features for this problem, I was not comfortable with its syntax.
+
+AI Usage Advisory: 
+I have used Claude to generate portions of the boilerplate code. I ideated the solution and made choices between languages for time overhead as based on choices in fora and LLM chats.
+Logic has been checked by me to be working. 
 
 Functions: 
 ```create_parking_lot <rows> <cols> <\newline> <maplines>```
@@ -27,7 +32,7 @@ Written in standard C11 plus POSIX `getline`, so it should also build on Linux w
 
 ## Running commands
 - Download/clone the repository and navigate to it.
-    ```sh
+   ```sh
    git clone https://github.com/vishwambharaRH/parking-lot-system
    cd parking-lot-system
    ```
@@ -40,7 +45,7 @@ Written in standard C11 plus POSIX `getline`, so it should also build on Linux w
     ```sh
     ./parking_lot input.txt
     ```
-    For running and obtaining CLI output, 
+    For running the program on the sample file, 
     ```sh
     ./parking_lot tests/data/sample.in
     ```
@@ -73,10 +78,10 @@ A list of commands for further detail:
 |`make`                |Build `./parking_lot`               |
 |`make test`           |Build and run all tests             |
 |`make test SANITIZE=1`|Run all tests sanitized             |
-|`make SANITIZE=1`     |Build a sanitized version           |
+|`make SANITIZE=1`     |Build a sanitized version, `./parking_lot_sanitize`           |
 |`make clean`          |Remove build folders and executables|
 
-As the map is assumed to be valid, there is no error handling for that. For other invalid inputs, the following table shows a few situations:
+As the map is assumed to be valid, it is not checked. For other invalid inputs, the following table shows a few situations:
 | Situation | Output |
 |---|---|
 | A command used before `create_parking_lot` | `Parking lot not created` |
