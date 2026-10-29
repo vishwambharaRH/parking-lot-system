@@ -1,0 +1,27 @@
+create_parking_lot 5 7
+E.....P
+P#P#P.P
+P.....#
+PP#P#.P
+P####.P
+park KA-01-HH-1234 White
+park KA-01-HH-9999 White
+park KA-01-BB-0001 Black
+park KA-01-HH-7777 Red
+park KA-01-HH-2701 Blue
+park KA-01-HH-3141 Black
+park KA-01-HH-5555 Grey
+park KA-01-HH-6666 White
+park KA-01-HH-8888 Red
+park KA-01-HH-1111 Blue
+leave 1 7
+leave 2 1
+status
+park KA-01-P-333 White
+park DL-12-AA-9999 White
+park MH-04-AY-1111 Black
+registration_numbers_for_cars_with_colour White
+slot_numbers_for_cars_with_colour White
+slot_number_for_registration_number KA-01-HH-3141
+slot_number_for_registration_number MH-04-AY-1111
+slot_number_for_registration_number TN-07-ZZ-0000

@@ -1,0 +1,30 @@
+Created a parking lot with 10 usable slots
+Allocated slot: (2, 1)
+Allocated slot: (2, 3)
+Allocated slot: (2, 5)
+Allocated slot: (1, 7)
+Allocated slot: (2, 7)
+Allocated slot: (4, 7)
+Allocated slot: (4, 4)
+Allocated slot: (5, 7)
+Allocated slot: (3, 1)
+Allocated slot: (4, 2)
+Slot (1, 7) is free
+Slot (2, 1) is free
+Slot      Registration No   Colour
+(2, 3)    KA-01-HH-9999     White
+(2, 5)    KA-01-BB-0001     Black
+(2, 7)    KA-01-HH-2701     Blue
+(3, 1)    KA-01-HH-8888     Red
+(4, 2)    KA-01-HH-1111     Blue
+(4, 4)    KA-01-HH-5555     Grey
+(4, 7)    KA-01-HH-3141     Black
+(5, 7)    KA-01-HH-6666     White
+Allocated slot: (2, 1)
+Allocated slot: (1, 7)
+Sorry, parking lot is full
+DL-12-AA-9999, KA-01-P-333, KA-01-HH-9999, KA-01-HH-6666
+(1, 7), (2, 1), (2, 3), (5, 7)
+(4, 7)
+Not found
+Not found

@@ -1,0 +1,17 @@
+status
+park A Red
+create_parking_lot 2 3
+E.P
+P.#
+fly away
+park A
+park A Red
+park A Blue
+leave x 1
+leave 1 1
+leave 9 9
+leave 2 1
+leave 1 3
+leave 1 3
+slot_numbers_for_cars_with_colour Red
+status
