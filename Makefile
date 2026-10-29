@@ -29,6 +29,9 @@ MAIN_OBJ := $(BUILD)/main.o
 TEST_SRCS := $(wildcard tests/test_*.c)
 TEST_BINS := $(TEST_SRCS:tests/%.c=$(BUILD)/tests/%)
 
+# End-to-end cases: the program's output for tests/data/X.in must equal X.out.
+E2E_INPUTS := $(wildcard tests/data/*.in)
+
 .PHONY: all test clean
 
 all: $(TARGET)
@@ -42,9 +45,24 @@ $(BUILD)/%.o: src/%.c | $(BUILD)
 $(BUILD)/tests/%: tests/%.c $(LIB_OBJS) | $(BUILD)/tests
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
-test: $(TEST_BINS)
-	@if [ -z "$(TEST_BINS)" ]; then echo "No tests found in tests/"; fi
+test: $(TEST_BINS) $(TARGET)
 	@for t in $(TEST_BINS); do echo "== $$t"; ./$$t || exit 1; done
+	@echo "== end-to-end: ./$(TARGET)"
+	@for input in $(E2E_INPUTS); do \
+		expected=$${input%.in}.out; \
+		if ./$(TARGET) $$input | diff -u $$expected - > /dev/null; then \
+			echo "ok    $$input"; \
+		else \
+			echo "FAIL  $$input (diff: expected vs actual)"; \
+			./$(TARGET) $$input | diff -u $$expected -; \
+			exit 1; \
+		fi; \
+	done
+	@if ./$(TARGET) > /dev/null 2>&1; then echo "FAIL  no arguments should exit 1"; exit 1; \
+		else echo "ok    no arguments -> usage, exit 1"; fi
+	@if ./$(TARGET) tests/data/no_such_file.txt > /dev/null 2>&1; then \
+		echo "FAIL  missing file should exit 1"; exit 1; \
+		else echo "ok    missing input file -> exit 1"; fi
 
 $(BUILD) $(BUILD)/tests:
 	mkdir -p $@
